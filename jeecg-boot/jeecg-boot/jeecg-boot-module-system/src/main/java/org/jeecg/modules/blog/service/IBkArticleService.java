@@ -1,5 +1,7 @@
 package org.jeecg.modules.blog.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import org.jeecg.modules.blog.BkArticleVo;
 import org.jeecg.modules.blog.entity.BkArticle;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -11,4 +13,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IBkArticleService extends IService<BkArticle> {
 
+    public Page<BkArticleVo> queryPageList(Page<BkArticleVo> bkArticleVoPage, BkArticle bkArticle);
 }

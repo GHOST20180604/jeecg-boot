@@ -2,4 +2,30 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.jeecg.modules.blog.mapper.BkArticleMapper">
 
+
+
+    <select id="queryPageList"   resultType="org.jeecg.modules.blog.BkArticleVo">
+        select
+          c.name as categoryName,
+          a.id as id ,
+          a.title as title ,
+          a.content as content ,
+          a.status as status ,
+          a.praise_num as praiseNum ,
+          a.can_comment as canComment ,
+          a.is_public as isPublic ,
+          a.create_by as createBy ,
+          a.create_time as createTime ,
+          a.update_by as updateBy ,
+          a.update_time as updateTime
+
+        from
+        bk_article a left join
+        bk_category c on a.category_id = c.id
+         and a.status != '2'
+        where 1=1 
+        <if test="bkArticle.title != null and bkArticle.title != ''">
+            AND a.title LIKE '%${bkArticle.title}%'
+        </if>
+   	</select>
 </mapper>
