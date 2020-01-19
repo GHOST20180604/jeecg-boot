@@ -7,6 +7,7 @@
     <select id="queryPageList"   resultType="org.jeecg.modules.blog.BkArticleVo">
         select
           c.name as categoryName,
+          c.id as categoryId,
           a.id as id ,
           a.title as title ,
           a.content as content ,
