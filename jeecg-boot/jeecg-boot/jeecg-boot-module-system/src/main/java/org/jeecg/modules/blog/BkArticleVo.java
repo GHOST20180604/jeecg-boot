@@ -79,4 +79,8 @@ public class BkArticleVo {
      * 分类名称
      */
     private String categoryName;
+    /**
+     * 标题名称(只是单纯为其前端页面展示列表用,其他地方永不倒)
+     */
+    private String titleName;
 }

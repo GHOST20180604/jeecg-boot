@@ -10,6 +10,7 @@
           c.id as categoryId,
           a.id as id ,
           a.title as title ,
+          a.title as titleName ,
           a.content as content ,
           a.status as status ,
           a.praise_num as praiseNum ,
